@@ -9,17 +9,17 @@ contract PhaseI {
     // constructor (uint256 _p) {
     //     value = _p;
     // }
-    struct policy_properties {
+    struct Policy{
         string name;
         address passenger_address;
         string flight_number;
         string flight_date;
-        string start_destination;
-        string end_destination;
+        string departure_city;
+        string destination_city;
         string policy_status;
     }
-
-    policy_properties public policy;
+    Policy[] public policies;
+    mapping(string => Policy) public policiesByName;
 
     constructor(address payable _insurance_provider) {
         insurance_provider = _insurance_provider;
@@ -30,11 +30,16 @@ contract PhaseI {
         return "Premium: 0.01 Ether \nIndemnity: 0.02 Ether \nCoverage issues: hail and floods";
     }
 
-    function purchase_policy() public payable {
+    function purchase_policy(string calldata name, string calldata number, string calldata date, string calldata departure, string calldata destination) public payable {
         // require(address(this).balance >= 0.01 ether, "Insufficient balance in contract");
         insurance_provider.transfer(0.01 ether);
-        policy = policy_properties("", address(this), "", "", "" ,"","");
+        policies.push(Policy(name, address(this), number, date, departure, destination, "Purchased"));
     }
+
+    // function view_purchased_policy(string memory name) public view returns (Policy memory) {
+    //     return policiesByName[name];
+    // }
+
 
     receive() external payable {}
 }

@@ -30,8 +30,14 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "policy",
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "policies",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -55,12 +61,12 @@
 					},
 					{
 						"internalType": "string",
-						"name": "start_destination",
+						"name": "departure_city",
 						"type": "string"
 					},
 					{
 						"internalType": "string",
-						"name": "end_destination",
+						"name": "destination_city",
 						"type": "string"
 					},
 					{
@@ -73,7 +79,82 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "policiesByName",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "passenger_address",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "flight_number",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "flight_date",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "departure_city",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "destination_city",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "policy_status",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "number",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "date",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "departure",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "destination",
+						"type": "string"
+					}
+				],
 				"name": "purchase_policy",
 				"outputs": [],
 				"stateMutability": "payable",
@@ -125,11 +206,11 @@
 	},
 	"sources": {
 		"Project3/PhaseI.sol": {
-			"keccak256": "0xedbac1535776f2e28cdb8d8f8db147b8fcd3ec43f4bf3323154fb0c17212f1f0",
+			"keccak256": "0xa64e2fc52424ff8afef82b9daaaa12cedef39249bc8ae1f04bbedbcf98631af0",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://96ad454b376f4fcb5af1e404ce8577e6d81fa190f306feed4453a02536ab25f5",
-				"dweb:/ipfs/QmbAMswXcjM1QM5oi81hojbS9DwiugL3KcruhAnCX4NBqi"
+				"bzz-raw://c6e84d423f5a12dc89f3c9343052ed1fa7c8bc5b93644ec51f3be09e4e249764",
+				"dweb:/ipfs/Qmah7TvRWTvFCeFLAEFcdRxDTZJ166AZvj7bt5PGLRGUS8"
 			]
 		}
 	},
