@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.7.6+commit.7338295f"
+		"version": "0.8.26+commit.8a97fa7a"
 	},
 	"language": "Solidity",
 	"output": {
@@ -32,61 +32,12 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "string",
 						"name": "",
-						"type": "uint256"
+						"type": "string"
 					}
 				],
 				"name": "policies",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "address",
-						"name": "passenger_address",
-						"type": "address"
-					},
-					{
-						"internalType": "string",
-						"name": "flight_number",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "flight_date",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "departure_city",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "destination_city",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "policy_status",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"name": "policiesByName",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -174,6 +125,25 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "view_purchased_policy",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"stateMutability": "payable",
 				"type": "receive"
 			}
@@ -193,7 +163,7 @@
 		"compilationTarget": {
 			"Project3/PhaseI.sol": "PhaseI"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -206,11 +176,11 @@
 	},
 	"sources": {
 		"Project3/PhaseI.sol": {
-			"keccak256": "0xa64e2fc52424ff8afef82b9daaaa12cedef39249bc8ae1f04bbedbcf98631af0",
+			"keccak256": "0x92c8a53e31d1d9ef70041bfd90eada094d9ffbea0dbaf5abdfc6e0f1341eb0ff",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://c6e84d423f5a12dc89f3c9343052ed1fa7c8bc5b93644ec51f3be09e4e249764",
-				"dweb:/ipfs/Qmah7TvRWTvFCeFLAEFcdRxDTZJ166AZvj7bt5PGLRGUS8"
+				"bzz-raw://0ee155764677834471ba4d4f1f677bc00f685396683941c132619f1d0edd8c8a",
+				"dweb:/ipfs/QmZXrYiSb3SS6eR4pGxSm3jDSEz5sSe6d1Y3bWAL9AqZKr"
 			]
 		}
 	},

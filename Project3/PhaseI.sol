@@ -18,8 +18,8 @@ contract PhaseI {
         string destination_city;
         string policy_status;
     }
-    Policy[] public policies;
-    mapping(string => Policy) public policiesByName;
+    // Policy[] public policies;
+    mapping(string => Policy) public policies;
 
     constructor(address payable _insurance_provider) {
         insurance_provider = _insurance_provider;
@@ -33,12 +33,12 @@ contract PhaseI {
     function purchase_policy(string calldata name, string calldata number, string calldata date, string calldata departure, string calldata destination) public payable {
         // require(address(this).balance >= 0.01 ether, "Insufficient balance in contract");
         insurance_provider.transfer(0.01 ether);
-        policies.push(Policy(name, address(this), number, date, departure, destination, "Purchased"));
+        policies[name] = Policy(name, address(this), number, date, departure, destination, "Purchased");
     }
 
-    // function view_purchased_policy(string memory name) public view returns (Policy memory) {
-    //     return policiesByName[name];
-    // }
+    function view_purchased_policy(string memory name) public view returns (string memory) {
+        return string.concat("Passenger Name: ", policies[name].name, "\nFlight Number: ", policies[name].flight_number, "\nFlight Date: ", policies[name].flight_date, "Flight date: ", policies[name].flight_date, "Departure city: ", policies[name].departure_city, "Destination city: ", policies[name].destination_city);
+    }
 
 
     receive() external payable {}
