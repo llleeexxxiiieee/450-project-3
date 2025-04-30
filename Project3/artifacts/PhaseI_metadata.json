@@ -1,0 +1,137 @@
+{
+	"compiler": {
+		"version": "0.7.6+commit.7338295f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_insurance_provider",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "insurance_provider",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "policy",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "passenger_address",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "flight_number",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "flight_date",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "start_destination",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "end_destination",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "policy_status",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "purchase_policy",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "view_policy",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Project3/PhaseI.sol": "PhaseI"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Project3/PhaseI.sol": {
+			"keccak256": "0xedbac1535776f2e28cdb8d8f8db147b8fcd3ec43f4bf3323154fb0c17212f1f0",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://96ad454b376f4fcb5af1e404ce8577e6d81fa190f306feed4453a02536ab25f5",
+				"dweb:/ipfs/QmbAMswXcjM1QM5oi81hojbS9DwiugL3KcruhAnCX4NBqi"
+			]
+		}
+	},
+	"version": 1
+}
