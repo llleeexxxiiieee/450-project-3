@@ -45,9 +45,13 @@ contract PhaseI {
         string memory result = "";
         for(uint i = 0; i < name_array.length; i++){
             string memory name = name_array[i];
-            result = string.concat(result, "Passenger Name: ", policies[name].name, "\nFlight Number: ", policies[name].flight_number, "Flight date: ", policies[name].flight_date, "Departure city: ", policies[name].departure_city, "Destination city: ", policies[name].destination_city, "\nPolicy Status: ", policies[name].policy_status, "\n");
+            result = string.concat(result, "Policy: Passenger Name: ", policies[name].name, " Flight Number: ", policies[name].flight_number, " Flight date: ", policies[name].flight_date, " Departure city: ", policies[name].departure_city, " Destination city: ", policies[name].destination_city, " Status: ", policies[name].policy_status, "\n");
         }
         return result;
+    }
+
+    function verify() public pure returns (string memory) {
+        return "Verified!";
     }
 
     receive() external payable {}

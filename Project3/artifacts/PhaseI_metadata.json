@@ -132,6 +132,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "verify",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "view_all_policies",
 				"outputs": [
 					{
@@ -208,11 +221,11 @@
 	},
 	"sources": {
 		"Project3/PhaseI.sol": {
-			"keccak256": "0x43ffb3795bf15e1e801eb1205a5d84d0f3ad8c7758444a623a5ae6318395cc56",
+			"keccak256": "0x628b23010b36db57168cda5cb05b907752e7b1c1b5e427cba2aff7865a1d2875",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://14ce8796a7fe2463ef9186966ae4227abaccc24d62b502774513c4eb2ad18cc8",
-				"dweb:/ipfs/QmUGC2PCHgCaHhTdrUaEpSxFf1hPN2M7T8ruwA82fxGkFA"
+				"bzz-raw://772f4bab2f00aa0af9ab574dc29de4d36a5636865bf20addfde4dcc5b3597518",
+				"dweb:/ipfs/QmVsHPvzKRqiyGBwuR1zDjFQaVv96GmfV2BgFNvvSpzmtR"
 			]
 		}
 	},
