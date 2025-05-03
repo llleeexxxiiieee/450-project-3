@@ -11,7 +11,7 @@ contract PhaseI {
     // }
     struct Policy{
         string name;
-        address passenger_address;
+        address payable passenger_address;
         string flight_number;
         string flight_date;
         string departure_city;
@@ -30,10 +30,10 @@ contract PhaseI {
         return "Premium: 0.01 Ether \nIndemnity: 0.02 Ether \nCoverage issues: hail and floods";
     }
 
-    function purchase_policy(string calldata name, string calldata number, string calldata date, string calldata departure, string calldata destination) public payable {
+    function purchase_policy(string calldata name, address payable p_address, string calldata number, string calldata date, string calldata departure, string calldata destination) public payable {
         // require(address(this).balance >= 0.01 ether, "Insufficient balance in contract");
         insurance_provider.transfer(0.01 ether);
-        policies[name] = Policy(name, address(this), number, date, departure, destination, "Purchased");
+        policies[name] = Policy(name, p_address, number, date, departure, destination, "Purchased");
         name_array.push(name);
     }
 
@@ -52,6 +52,18 @@ contract PhaseI {
 
     function verify() public pure returns (string memory) {
         return "Verified!";
+    }
+
+    function pay_indemnity(string[] memory claim_list) public returns (string memory) {
+        for(uint i = 0; i < claim_list.length; i++){
+            policies[claim_list[i]].passenger_address.transfer(0.02 ether);
+            policies[claim_list[i]].policy_status = "Claimed";
+        }
+        return "Payments successful!";
+    }
+
+    function view_balance(string memory passenger) public view returns (uint256) {
+        return policies[passenger].passenger_address.balance;
     }
 
     receive() external payable {}

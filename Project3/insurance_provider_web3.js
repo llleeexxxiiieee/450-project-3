@@ -1,7 +1,7 @@
 (async () => {
     // const account1 = '0xC42d437b15d1484B7115d76218c298A1fAAD8cb4'
     
-    const contractAddress = '0xC3Ba5050Ec45990f76474163c5bA673c244aaECA' //change this to new address whenever contract is deployed
+    const contractAddress = '0x9396B453Fad71816cA9f152Ae785276a1D578492' //change this to new address whenever contract is deployed
     console.log('start exec')
     
     const artifactsPath = `Project3/artifacts/PhaseI.json` // Change this for different path
@@ -29,36 +29,43 @@
     })
 
     console.log("after query");
-    // let index = 1;
-    // let pay_list = [];
+    let index = 1;
+    let claim_list = [];
 
     contract.methods.verify().call(function (err, result) {
         if (err){
             console.log("An error occured", err)
             return
         } else {
-            console.log("hello")
-            let index = 1;
-            let pay_list = [];
+            // console.log("hello")
             while (index > 0) {
                 let date = policies.substr(policies.indexOf("Flight date:") + 13, 10);
                 let city = policies.substring(policies.indexOf("Departure city:") + 16, policies.indexOf("Destination"));
                 let search = date + " " + city;
                 console.log(search);
                 if(weather_data.includes(search)) {
-                    console.log("hey");
+                    // console.log("hey");
                     let weather = weather_data.substr(weather_data.indexOf(search) + search.length, 4);
-                    console.log(weather);
+                    // console.log(weather);
                     if ((weather == "Hail") || (weather == "Floo")) {
-                        pay_list.push(policies.substr(24, 8));
+                        claim_list.push(policies.substring(24, policies.indexOf("Flight") - 1));
                     }
                 }
                 index = policies.indexOf("\nPolicy: ");
-                console.log(index);
+                // console.log(index);
                 policies = policies.substring(index + 1);
             }
-            console.log(pay_list.toString());
-            
+            console.log(claim_list);
+            console.log(result);
+        }
+    })
+
+    contract.methods.pay_indemnity(claim_list).call(function (err, result) {
+        if (err){
+            console.log("An error occured", err)
+            return
+        } else {
+            console.log(result);
         }
     })
     
