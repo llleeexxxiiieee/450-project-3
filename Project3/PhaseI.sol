@@ -18,7 +18,7 @@ contract PhaseI {
         string destination_city;
         string policy_status;
     }
-    // Policy[] public policies;
+    string[] public name_array;
     mapping(string => Policy) public policies;
 
     constructor(address payable _insurance_provider) {
@@ -34,12 +34,21 @@ contract PhaseI {
         // require(address(this).balance >= 0.01 ether, "Insufficient balance in contract");
         insurance_provider.transfer(0.01 ether);
         policies[name] = Policy(name, address(this), number, date, departure, destination, "Purchased");
+        name_array.push(name);
     }
 
     function view_purchased_policy(string memory name) public view returns (string memory) {
-        return string.concat("Passenger Name: ", policies[name].name, "\nFlight Number: ", policies[name].flight_number, "\nFlight Date: ", policies[name].flight_date, "Flight date: ", policies[name].flight_date, "Departure city: ", policies[name].departure_city, "Destination city: ", policies[name].destination_city);
+        return string.concat("Passenger Name: ", policies[name].name, "\nFlight Number: ", policies[name].flight_number, "Flight date: ", policies[name].flight_date, "Departure city: ", policies[name].departure_city, "Destination city: ", policies[name].destination_city, "\nPolicy Status: ", policies[name].policy_status);
     }
 
+    function view_all_policies() public view returns (string memory) {
+        string memory result = "";
+        for(uint i = 0; i < name_array.length; i++){
+            string memory name = name_array[i];
+            result = string.concat(result, "Passenger Name: ", policies[name].name, "\nFlight Number: ", policies[name].flight_number, "Flight date: ", policies[name].flight_date, "Departure city: ", policies[name].departure_city, "Destination city: ", policies[name].destination_city, "\nPolicy Status: ", policies[name].policy_status, "\n");
+        }
+        return result;
+    }
 
     receive() external payable {}
 }
