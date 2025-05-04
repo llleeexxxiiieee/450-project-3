@@ -49,6 +49,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "string[]",
@@ -64,7 +77,7 @@
 						"type": "string"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -164,7 +177,7 @@
 						"type": "string"
 					}
 				],
-				"stateMutability": "pure",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -182,7 +195,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "view_policy",
+				"name": "view_available_policy",
 				"outputs": [
 					{
 						"internalType": "string",
@@ -191,6 +204,25 @@
 					}
 				],
 				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "passenger",
+						"type": "string"
+					}
+				],
+				"name": "view_balance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -230,7 +262,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Project3/PhaseI.sol": "PhaseI"
+			"Project3/PhaseIandII.sol": "PhaseIandII"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -244,12 +276,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Project3/PhaseI.sol": {
-			"keccak256": "0x588dd7f174ea32a798b9544fb20e78b3e62ad6f219db901ad442e43e22699a3c",
+		"Project3/PhaseIandII.sol": {
+			"keccak256": "0x5f89e75706e48ee5f2366e5c34fc7e260bc5b060aeca79429f870e9c74a2bfd0",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://0b3da162dc929789e667fae2a9741c5d115ffb4da944e29bf7f6c98700232cbf",
-				"dweb:/ipfs/QmfAsXo39WD5wemFYkzbrjHQUFEL2uEMDZgQQ2ggWrLakv"
+				"bzz-raw://1e7e476910b370baf0e4e92220ea3fcdd72e570e4abe48fb279d54aca5f6eed6",
+				"dweb:/ipfs/QmUJSbVwbmovT961gwPaGnnXCbUqieBkncDJt3NAeT9Rjq"
 			]
 		}
 	},

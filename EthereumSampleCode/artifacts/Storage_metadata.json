@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.7.6+commit.7338295f"
+		"version": "0.8.26+commit.8a97fa7a"
 	},
 	"language": "Solidity",
 	"output": {
@@ -62,7 +62,7 @@
 		"compilationTarget": {
 			"EthereumSampleCode/Storage.sol": "Storage"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "cancun",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -75,11 +75,11 @@
 	},
 	"sources": {
 		"EthereumSampleCode/Storage.sol": {
-			"keccak256": "0x9da76ad00a498888381fd857db81de4727e621bbcc169c6041bc5933e2765941",
+			"keccak256": "0xaa818a5356206f29d3722d42e0f124dc04cd24706e239555f3d5c1f8c84c7572",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1bec385cd8fea9309b3727b1dccbceb0ab87f8f622a9a19fc116124bf570b77c",
-				"dweb:/ipfs/QmdLCCF1cjJHrDoWNd7Nm1nXsxES7cpZbmUeo6GgidJVEE"
+				"bzz-raw://5196bf9d0fc4e5903018a58538c81daf238eac7b7eb393cf1d376ce614481026",
+				"dweb:/ipfs/QmZEiQBeYojh2Qa81ZWadweWX58AFa9TCnyfgGwo8FnzFH"
 			]
 		}
 	},

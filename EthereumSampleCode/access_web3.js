@@ -1,10 +1,10 @@
 (async () => {
     // const account1 = '0xC42d437b15d1484B7115d76218c298A1fAAD8cb4'
     
-    const contractAddress = '0x3FDC8bfda82FCbd92B64C01A29FC22CE95058B8f'
+    const contractAddress = '0x358AA13c52544ECCEF6B0ADD0f801012ADAD5eE3'
     console.log('start exec')
     
-    const artifactsPath = `browser/contracts/artifacts/Storage.json` // Change this for different path
+    const artifactsPath = 'EthereumSampleCode/artifacts/Storage.json' // Change this for different path
     const metadata = JSON.parse(await remix.call('fileManager', 'getFile', artifactsPath))
     const accounts = await web3.eth.getAccounts()
     
@@ -29,7 +29,7 @@
     //     console.log("Hash of the transaction: " + res)
     // })
     
-    let result = await contract.methods.store(30).send({from: accounts[3]})
+    let result = await contract.methods.store(50).send({from: accounts[3]})
     console.log("Store result is: ", result)
     
     contract.methods.retrieve().call(function (err, result) {
