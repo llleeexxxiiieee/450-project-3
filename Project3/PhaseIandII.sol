@@ -64,16 +64,18 @@ contract PhaseIandII {
         return "Verified!";
     }
 
-    function pay_indemnity(string[] memory claim_list) onlyProvider public payable returns (string memory) {
-        for(uint i = 0; i < claim_list.length; i++){
-            policies[claim_list[i]].passenger_address.transfer(0.02 ether);
-            policies[claim_list[i]].policy_status = "Claimed";
-        }
+    function pay_indemnity(string memory passenger) onlyProvider public payable returns (string memory) {
+        policies[passenger].passenger_address.transfer(0.02 ether);
+        policies[passenger].policy_status = "Claimed";
         return "Payments successful!";
     }
 
     function view_balance(string memory passenger) public view returns (uint256) {
         return policies[passenger].passenger_address.balance;
+    }
+    
+    fallback() external payable {
+        insurance_provider.transfer(msg.value);
     }
 
     receive() external payable {}

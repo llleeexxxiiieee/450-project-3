@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.26+commit.8a97fa7a"
+		"version": "0.8.30+commit.73712a01"
 	},
 	"language": "Solidity",
 	"output": {
@@ -15,6 +15,23 @@
 				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "gas_used",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			},
 			{
 				"inputs": [],
@@ -64,9 +81,9 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string[]",
-						"name": "claim_list",
-						"type": "string[]"
+						"internalType": "string",
+						"name": "passenger",
+						"type": "string"
 					}
 				],
 				"name": "pay_indemnity",
@@ -264,7 +281,7 @@
 		"compilationTarget": {
 			"Project3/PhaseIandII.sol": "PhaseIandII"
 		},
-		"evmVersion": "cancun",
+		"evmVersion": "prague",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -277,11 +294,11 @@
 	},
 	"sources": {
 		"Project3/PhaseIandII.sol": {
-			"keccak256": "0x5f89e75706e48ee5f2366e5c34fc7e260bc5b060aeca79429f870e9c74a2bfd0",
+			"keccak256": "0x8cc1d4c77d634e32a645d6883d065c7f9b55b31b5e343752f7a57729c58633bb",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1e7e476910b370baf0e4e92220ea3fcdd72e570e4abe48fb279d54aca5f6eed6",
-				"dweb:/ipfs/QmUJSbVwbmovT961gwPaGnnXCbUqieBkncDJt3NAeT9Rjq"
+				"bzz-raw://781136210a8cd7e191caf95df2c937b0a51fa1759926cc8598ee476d6b81b72a",
+				"dweb:/ipfs/QmfPsqgR3qNZ6Lmkgkk2TfGGoPbNqXj6zfHZmNxCqP2bCy"
 			]
 		}
 	},
